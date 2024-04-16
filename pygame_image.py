@@ -22,13 +22,18 @@ def main():
         key_lst = pg.key.get_pressed()
 
         if key_lst[pg.K_UP]:
-            koukaton_rct.move_ip([0,-1])
+            koukaton_rct.move_ip([-1,1])
         elif key_lst[pg.K_DOWN]:
-            koukaton_rct.move_ip([0,1])
+            koukaton_rct.move_ip([-1,-1])
         elif key_lst[pg.K_LEFT]:
-            koukaton_rct.move_ip([1,0])
-        elif key_lst[pg.K_RIGHT]:
             koukaton_rct.move_ip([-1,0])
+        elif key_lst[pg.K_RIGHT]:
+            koukaton_rct.move_ip([2,0])
+        else:
+            koukaton_rct.move_ip([-1,0])
+
+        
+        
 
         x = tmr % 3200    
         screen.blit(bg_img, [-x, 0])                #練習6
